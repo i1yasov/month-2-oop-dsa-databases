@@ -1,6 +1,5 @@
 import sqlite3
 
-
 connect = sqlite3.connect('store.db')
 cursor = connect.cursor()
 
@@ -15,7 +14,6 @@ CREATE TABLE IF NOT EXISTS products (
 ''')
 connect.commit()
 
-
 def create_product(name, price, quantity):
     cursor.execute('''
     INSERT INTO products (name, price, quantity)
@@ -23,8 +21,6 @@ def create_product(name, price, quantity):
     ''', (name, price, quantity))
     connect.commit()
     print("Товар добавлен!")
-
-
 
 def read_products():
     cursor.execute('SELECT * FROM products')
@@ -36,8 +32,6 @@ def read_products():
         for product in products:
             print(product)
 
-
-
 def update_product(id, price):
     cursor.execute('''
     UPDATE products
@@ -47,8 +41,6 @@ def update_product(id, price):
     connect.commit()
     print("Цена обновлена!")
 
-
-
 def delete_product(id):
     cursor.execute('''
     DELETE FROM products
@@ -56,8 +48,6 @@ def delete_product(id):
     ''', (id,))
     connect.commit()
     print("Товар удален!")
-
-
 
 if __name__ == "__main__":
     create_product("Телефон", 15000, 5)
@@ -77,6 +67,5 @@ if __name__ == "__main__":
 
     print("\nПосле удаления:")
     read_products()
-
 
 connect.close()

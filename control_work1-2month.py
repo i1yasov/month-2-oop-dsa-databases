@@ -23,7 +23,6 @@ class WarriorHero(MageHero):
         return f'Воин {self.name} рубит мечом! Уровень: {self.lvl}'
 
 
-
 class BankAccount:
     def __init__(self,hero,balance,password,bank_name):
         self.hero = hero
@@ -64,7 +63,6 @@ class RUSms(SmsService):
     def send_otp(self, phone):
         return {"text": "Код: 1234", "phone": phone}
 
-
 mage1 = MageHero("Merlin", 80, 500, 150)
 mage2 = MageHero("Merlin", 80, 500, 200)
 warrior = WarriorHero("Conan", 50, 900, 20)
@@ -74,9 +72,6 @@ acc2 = BankAccount(mage2, 3000, "0000", "Simba")
 acc3 = BankAccount(warrior, 2500, "1111", "Simba")
 
 sms = KGSms()
-
-
-
 
 print(mage1.action())
 print(warrior.action())
