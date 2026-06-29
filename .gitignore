@@ -1,11 +1,4 @@
-db/todo.db
-db/users.db
-db/store.db
-db/grode.db
-db/netflix.db
-# SQLite database
-.gitignore
-*.db
+
 .idea/
 db.sqlite3
 db.sqlite3-journal
